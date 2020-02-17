@@ -1,0 +1,44 @@
+
+<script type="text/javascript">
+	
+function isHtml(){
+	form.source.value = 'html';
+	validate();
+}	
+
+function isExcel(){
+	form.source.value = 'excel';
+	validate();
+}	
+
+function validate() {
+	if(form.category.selectedIndex == '0')
+	{
+		alert("select someone first");
+	}//if
+	else{
+		form.submit();
+	}//function
+}
+</script>
+
+<form name="form" action="controller" method="post">
+		<table style="background-color: blue; margin: auto;">
+			<tr>
+				<th style="color: #fff">select category</th>
+				<td><select name="category">
+					<option selected value=""> select a value</option>
+					<option value="java">java</option>
+					<option value="database">database</option>
+					<option value="php">php</option>
+				</select></td>	
+			</tr>
+
+			<tr>
+				<th><input type="button" value="HtmlOutput" onclick="isHtml()"></th>
+				<th><input type="button" value="ExcelOutput" onclick="isExcel()"></th>
+			</tr>
+		</table>
+
+		<input type="hidden" name="source">
+ </form>
